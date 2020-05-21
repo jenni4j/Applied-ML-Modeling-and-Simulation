@@ -1,6 +1,20 @@
 # Script for checking implementation of ODE RHS and forward Euler
 import numpy as np
 
+
+##Functions to implement
+
+def ode_rhs(u,beta,kappa):
+    s = u[0]
+    i = u[1]
+    r = u[2]
+    dsdt = 0
+    didt = 0
+    drdt = 0
+    dudt = [dsdt,didt,drdt]
+
+
+
 i = 0.01
 s = 1 - i
 r = 0
@@ -23,5 +37,6 @@ for t in range(1,51):
     u_now = u_check[:,t-1]
     u_next = forwardEulerUpdate(u_now,dt,beta,kappa)
     u_check[:,t] = u_next
+
 
 
