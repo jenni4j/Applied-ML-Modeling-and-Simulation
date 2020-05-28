@@ -29,15 +29,15 @@ kappa = 1/3
 
 dudt = ode_rhs(u0, beta, kappa)
 
-dsdt = dudt[1]
-didt = dudt[2]
-drdt = dudt[3]
+dsdt = dudt[0]
+didt = dudt[1]
+drdt = dudt[2]
 
 dt = 1
-u_check = np.zeros([3,51])
+u_check = np.zeros([3,52])
 u_check[:,0] = u0
 
-for t in range(1,51):
+for t in range(1,52):
     u_now = u_check[:,t-1]
     u_next = forwardEulerUpdate(u_now,dt,beta,kappa)
     u_check[:,t] = u_next
@@ -52,16 +52,16 @@ beta = 1/2
 kappa = 1/3
 
 dt = 1
-T = range(0,100,dt)
+T = np.arange(0,100,dt)
 
-u = np.zeros(3,len(T))
+u = np.zeros([3,len(T)])
 u[:,0] = u0
 
 for t in range(1,len(T)):
     u[:,t] = forwardEulerUpdate(u[:,t-1],dt,beta,kappa)
 
-plt.plot(T,u[0,:])
-plt.plot(T,u[1,:])
-plt.plot(T,u[2,:])
+#plt.plot(T,u[0,:], label = 's(t) Approx')
+plt.plot(T,u[1,:], label = 'i(t) Approx')
+#plt.plot(T,u[2,:], label = 'r(t) Approx')
 plt.show()
 
