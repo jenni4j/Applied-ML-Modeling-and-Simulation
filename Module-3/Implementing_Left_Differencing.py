@@ -4,13 +4,13 @@ import matplotlib.pyplot as plt
 
 N = 200
 
-h = 2*pi/N
-x = linspace(0,2*pi,N+1)'
-u = sin(x)
+h = 2*np.pi/N
+x = np.transpose(np.linspace(0,2*np.pi,N+1))
+u = np.sin(x)
 
-A = zeros(N,N)
+A = np.zeros((N,N))
 
-for i in range(1,N):
+for i in range(0,N):
     A[i,i] = 1/h
 
 A(1,N) = -1/h
