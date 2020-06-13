@@ -8,7 +8,7 @@ h = 2*np.pi/N
 x = np.transpose(np.linspace(0,2*np.pi,N))
 u = np.sin(x)
 
-A = np.zeros((N,N))
+A = np.zeros((N+1,N+1))
 
 #loop through and replace appropriate entries with -1/h
 for i in range(0,N):
@@ -20,7 +20,7 @@ for i in range(1,N):
     A[i,i-1] = -1/h
 
 #compute derivative
-dudx = np.dot(u,A)
+dudx = np.dot(A,u)
 
 plt.plot(x,np.cos(x),label = 'Truth')
 plt.plot(x,dudx,label = 'Approximation')
