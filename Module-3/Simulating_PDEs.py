@@ -10,4 +10,9 @@ ux_scheme = 'left' #choose 'left' or 'right' for type of discretiztion stencil
 timestepper = 'fe'
 x = np.linspace(0,1,nSpace+1)
 dx = 1/nSpace
-u0 = init(x)
+u0 = init[x]
+
+c = 0.5
+k = 5e-4
+
+A = getMatrix(nSpace,ux_scheme)
