@@ -2,13 +2,13 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 #set up grid and compute state vector
-N = 2
+N = 200
 h = 2*np.pi/N
 x = np.transpose(np.linspace(0,2*np.pi,N+1))
 x = x[0:N]
 u = np.sin(x)
 
-A = np.zeros((N+1,N+1))
+A = np.zeros((N,N))
 
 #loop through and replace appropriate entries with -1/h
 for i in range(0,N):
