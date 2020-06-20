@@ -1,11 +1,11 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-
-N = 2
 #set up grid and compute state vector
+N = 2
 h = 2*np.pi/N
-x = np.transpose(np.linspace(0,2*np.pi,N))
+x = np.transpose(np.linspace(0,2*np.pi,N+1))
+x = x[0:N]
 u = np.sin(x)
 
 A = np.zeros((N+1,N+1))
