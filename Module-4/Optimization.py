@@ -21,4 +21,14 @@ def grad_descent(g, alpha, x0, max_iter, grad_tol):
         grad = g(x)
         g_iter = [g_iter, np.linalg.norm(grad)]
         counter = counter + 1
-        
+
+
+def f(x1, x2):
+    return -1*log(1-x1-x2)-log(x1)-log(x2)
+
+g1 = x1
+g2 = x2
+
+xt = [0.25,0.25]
+g1_xt = g1(xt(1),xt(2))
+g2_xt = g2(xt(1),xt(2))
