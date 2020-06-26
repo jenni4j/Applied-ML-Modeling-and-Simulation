@@ -34,3 +34,10 @@ g1_xt = g1(xt(1),xt(2))
 g2_xt = g2(xt(1),xt(2))
 
 grad = [g1(x1,x2),g2(x1,x2)]
+
+#initial condition
+x0 = [0.85,0.05]
+alpha = 0.05
+
+#run gradient descent
+[x_gd,] = grad_descent(grad,alpha,x0)
