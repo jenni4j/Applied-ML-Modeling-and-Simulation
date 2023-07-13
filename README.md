@@ -1,2 +1,1 @@
-# Applied-ML-Modeling-and-Simulation
-Python version of notes &amp; assignments for MITxPro course - Machine Learning: Modeling and Simulation for Engineers
+A repo for the completed assignments of an online MIT course (Machine Learning: Modeling and Simulation for Engineers)
